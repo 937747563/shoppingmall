@@ -3,7 +3,10 @@ package com.zh.commodity.controller;
 import java.util.Arrays;
 import java.util.Map;
 
+import com.zh.commodity.fegin.StockFeignService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +18,7 @@ import com.zh.commodity.service.AttrAttrgroupRelationService;
 import com.zh.common.utils.PageUtils;
 import com.zh.common.utils.R;
 
+import javax.annotation.Resource;
 
 
 /**
@@ -24,11 +28,30 @@ import com.zh.common.utils.R;
  * @email 937747563@qq.com
  * @date 2020-10-23 17:57:20
  */
+@RefreshScope
 @RestController
 @RequestMapping("commodity/attrattrgrouprelation")
 public class    AttrAttrgroupRelationController {
     @Autowired
     private AttrAttrgroupRelationService attrAttrgroupRelationService;
+
+    @Resource
+    private StockFeignService stockFeignService;
+
+    @Value("${user.name.one}")
+    private String userNameOne;
+
+
+    @RequestMapping("/test")
+    public String test(){
+        String result=stockFeignService.test();
+        return "01-commodity test方法     "+result;
+    }
+
+    @RequestMapping("/test2")
+    public String test2(){
+        return userNameOne;
+    }
 
     /**
      * 列表

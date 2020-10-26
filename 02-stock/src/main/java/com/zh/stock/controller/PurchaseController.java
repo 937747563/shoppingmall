@@ -30,6 +30,12 @@ public class PurchaseController {
     @Autowired
     private PurchaseService purchaseService;
 
+    @RequestMapping("/test")
+    public String test(){
+        return "02-stock测试服务";
+    }
+
+
     /**
      * 列表
      */
