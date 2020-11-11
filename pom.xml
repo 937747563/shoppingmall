@@ -20,6 +20,9 @@
         <module>renren-fast</module>
         <module>renren-generator</module>
         <module>utils-shoppingmall</module>
+
+        <module>getway</module>
+        <module>third-party</module>
     </modules>
 
 

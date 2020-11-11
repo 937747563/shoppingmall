@@ -3,10 +3,7 @@ package com.zh.commodity.controller;
 import java.util.Arrays;
 import java.util.Map;
 
-import com.zh.commodity.fegin.StockFeignService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,45 +15,26 @@ import com.zh.commodity.service.AttrAttrgroupRelationService;
 import com.zh.common.utils.PageUtils;
 import com.zh.common.utils.R;
 
-import javax.annotation.Resource;
 
 
 /**
- * ????&???Է???????
+ * 属性&属性分组关联
  *
  * @author ZH
  * @email 937747563@qq.com
- * @date 2020-10-23 17:57:20
+ * @date 2020-10-30 10:07:05
  */
-@RefreshScope
 @RestController
 @RequestMapping("commodity/attrattrgrouprelation")
-public class    AttrAttrgroupRelationController {
+public class AttrAttrgroupRelationController {
     @Autowired
     private AttrAttrgroupRelationService attrAttrgroupRelationService;
-
-    @Resource
-    private StockFeignService stockFeignService;
-
-    @Value("${user.name.one}")
-    private String userNameOne;
-
-
-    @RequestMapping("/test")
-    public String test(){
-        String result=stockFeignService.test();
-        return "01-commodity test方法     "+result;
-    }
-
-    @RequestMapping("/test2")
-    public String test2(){
-        return userNameOne;
-    }
 
     /**
      * 列表
      */
     @RequestMapping("/list")
+    //@RequiresPermissions("commodity:attrattrgrouprelation:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = attrAttrgroupRelationService.queryPage(params);
 
@@ -68,6 +46,7 @@ public class    AttrAttrgroupRelationController {
      * 信息
      */
     @RequestMapping("/info/{id}")
+    //@RequiresPermissions("commodity:attrattrgrouprelation:info")
     public R info(@PathVariable("id") Long id){
 		AttrAttrgroupRelationEntity attrAttrgroupRelation = attrAttrgroupRelationService.getById(id);
 
@@ -78,6 +57,7 @@ public class    AttrAttrgroupRelationController {
      * 保存
      */
     @RequestMapping("/save")
+    //@RequiresPermissions("commodity:attrattrgrouprelation:save")
     public R save(@RequestBody AttrAttrgroupRelationEntity attrAttrgroupRelation){
 		attrAttrgroupRelationService.save(attrAttrgroupRelation);
 
@@ -88,6 +68,7 @@ public class    AttrAttrgroupRelationController {
      * 修改
      */
     @RequestMapping("/update")
+    //@RequiresPermissions("commodity:attrattrgrouprelation:update")
     public R update(@RequestBody AttrAttrgroupRelationEntity attrAttrgroupRelation){
 		attrAttrgroupRelationService.updateById(attrAttrgroupRelation);
 
@@ -98,6 +79,7 @@ public class    AttrAttrgroupRelationController {
      * 删除
      */
     @RequestMapping("/delete")
+    //@RequiresPermissions("commodity:attrattrgrouprelation:delete")
     public R delete(@RequestBody Long[] ids){
 		attrAttrgroupRelationService.removeByIds(Arrays.asList(ids));
 

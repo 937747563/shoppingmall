@@ -7,11 +7,11 @@ import com.zh.commodity.entity.BrandEntity;
 import java.util.Map;
 
 /**
- * Ʒ?
+ * 品牌
  *
  * @author ZH
  * @email 937747563@qq.com
- * @date 2020-10-23 17:57:20
+ * @date 2020-10-30 10:07:05
  */
 public interface BrandService extends IService<BrandEntity> {
 

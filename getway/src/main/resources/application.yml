@@ -1,0 +1,34 @@
+server:
+  port: 88
+
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 172.16.23.150:8848
+    gateway:
+      routes:
+        - id: product_route
+          uri: lb://01-commodity
+          predicates:
+            - Path=/api/commodity/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+
+        - id: third_route
+          uri: lb://third-party
+          predicates:
+            - Path=/api/thirdparty/**
+          filters:
+            - RewritePath=/api/thirdparty/(?<segment>.*),/$\{segment}
+
+        - id: admin_route
+          uri: lb://renren-fast
+          predicates:
+            - Path=/api/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/renren-fast/$\{segment}
+
+
+  application:
+    name: getway

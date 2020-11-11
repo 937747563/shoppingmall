@@ -1,8 +1,11 @@
 package com.zh.commodity.controller;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import org.hibernate.validator.constraints.EAN;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,11 +21,11 @@ import com.zh.common.utils.R;
 
 
 /**
- * Ʒ?Ʒ???????
+ * 品牌分类关联
  *
  * @author ZH
  * @email 937747563@qq.com
- * @date 2020-10-23 17:57:20
+ * @date 2020-10-30 10:07:05
  */
 @RestController
 @RequestMapping("commodity/categorybrandrelation")
@@ -30,10 +33,26 @@ public class CategoryBrandRelationController {
     @Autowired
     private CategoryBrandRelationService categoryBrandRelationService;
 
+
+    /**
+     * 获取当前品牌关联的所有分类
+     */
+    @RequestMapping("/catelog/list")
+    //@RequiresPermissions("commodity:categorybrandrelation:list")
+    public R catelogList(@RequestParam("brandId") Long brandId){
+
+        List<CategoryBrandRelationEntity> data=categoryBrandRelationService.list(
+                new QueryWrapper<CategoryBrandRelationEntity>().eq("brand_id",brandId)
+        );
+
+        return R.ok().put("data", data);
+    }
+
     /**
      * 列表
      */
     @RequestMapping("/list")
+    //@RequiresPermissions("commodity:categorybrandrelation:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = categoryBrandRelationService.queryPage(params);
 
@@ -45,6 +64,7 @@ public class CategoryBrandRelationController {
      * 信息
      */
     @RequestMapping("/info/{id}")
+    //@RequiresPermissions("commodity:categorybrandrelation:info")
     public R info(@PathVariable("id") Long id){
 		CategoryBrandRelationEntity categoryBrandRelation = categoryBrandRelationService.getById(id);
 
@@ -55,8 +75,10 @@ public class CategoryBrandRelationController {
      * 保存
      */
     @RequestMapping("/save")
+    //@RequiresPermissions("commodity:categorybrandrelation:save")
     public R save(@RequestBody CategoryBrandRelationEntity categoryBrandRelation){
-		categoryBrandRelationService.save(categoryBrandRelation);
+
+        categoryBrandRelationService.saveDateil(categoryBrandRelation);
 
         return R.ok();
     }
@@ -65,6 +87,7 @@ public class CategoryBrandRelationController {
      * 修改
      */
     @RequestMapping("/update")
+    //@RequiresPermissions("commodity:categorybrandrelation:update")
     public R update(@RequestBody CategoryBrandRelationEntity categoryBrandRelation){
 		categoryBrandRelationService.updateById(categoryBrandRelation);
 
@@ -75,6 +98,7 @@ public class CategoryBrandRelationController {
      * 删除
      */
     @RequestMapping("/delete")
+    //@RequiresPermissions("commodity:categorybrandrelation:delete")
     public R delete(@RequestBody Long[] ids){
 		categoryBrandRelationService.removeByIds(Arrays.asList(ids));
 

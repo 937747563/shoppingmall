@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.zh.common.utils.PageUtils;
 import com.zh.commodity.entity.CategoryEntity;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -16,5 +17,14 @@ import java.util.Map;
 public interface CategoryService extends IService<CategoryEntity> {
 
     PageUtils queryPage(Map<String, Object> params);
+
+    List<CategoryEntity> listWithTree();
+
+    void removeMenuByIds(List<Long> asList);
+
+    /**
+     * 找到 catelogId 的完成路径
+     */
+    Long[] findCatelogPath(Long catelogId);
 }
 

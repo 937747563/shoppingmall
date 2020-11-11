@@ -18,11 +18,11 @@ import com.zh.common.utils.R;
 
 
 /**
- * spu??Ϣ
+ * spu信息
  *
  * @author ZH
  * @email 937747563@qq.com
- * @date 2020-10-23 17:57:20
+ * @date 2020-10-30 10:07:05
  */
 @RestController
 @RequestMapping("commodity/spuinfo")
@@ -34,6 +34,7 @@ public class SpuInfoController {
      * 列表
      */
     @RequestMapping("/list")
+    //@RequiresPermissions("commodity:spuinfo:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = spuInfoService.queryPage(params);
 
@@ -45,6 +46,7 @@ public class SpuInfoController {
      * 信息
      */
     @RequestMapping("/info/{id}")
+    //@RequiresPermissions("commodity:spuinfo:info")
     public R info(@PathVariable("id") Long id){
 		SpuInfoEntity spuInfo = spuInfoService.getById(id);
 
@@ -55,6 +57,7 @@ public class SpuInfoController {
      * 保存
      */
     @RequestMapping("/save")
+    //@RequiresPermissions("commodity:spuinfo:save")
     public R save(@RequestBody SpuInfoEntity spuInfo){
 		spuInfoService.save(spuInfo);
 
@@ -65,6 +68,7 @@ public class SpuInfoController {
      * 修改
      */
     @RequestMapping("/update")
+    //@RequiresPermissions("commodity:spuinfo:update")
     public R update(@RequestBody SpuInfoEntity spuInfo){
 		spuInfoService.updateById(spuInfo);
 
@@ -75,6 +79,7 @@ public class SpuInfoController {
      * 删除
      */
     @RequestMapping("/delete")
+    //@RequiresPermissions("commodity:spuinfo:delete")
     public R delete(@RequestBody Long[] ids){
 		spuInfoService.removeByIds(Arrays.asList(ids));
 

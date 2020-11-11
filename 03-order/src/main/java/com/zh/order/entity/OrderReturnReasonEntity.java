@@ -8,11 +8,11 @@ import java.util.Date;
 import lombok.Data;
 
 /**
- * ?˻?ԭ?
+ * 退货原因
  * 
  * @author ZH
  * @email 937747563@qq.com
- * @date 2020-10-24 21:56:00
+ * @date 2020-10-30 11:06:09
  */
 @Data
 @TableName("oms_order_return_reason")
@@ -25,15 +25,15 @@ public class OrderReturnReasonEntity implements Serializable {
 	@TableId
 	private Long id;
 	/**
-	 * ?˻?ԭ?
+	 * 退货原因名
 	 */
 	private String name;
 	/**
-	 * ???
+	 * 排序
 	 */
 	private Integer sort;
 	/**
-	 * ????״̬
+	 * 启用状态
 	 */
 	private Integer status;
 	/**

@@ -9,11 +9,11 @@ import java.util.Date;
 import lombok.Data;
 
 /**
- * ?????˻????
+ * 订单退货申请
  * 
  * @author ZH
  * @email 937747563@qq.com
- * @date 2020-10-24 21:56:00
+ * @date 2020-10-30 11:06:09
  */
 @Data
 @TableName("oms_order_return_apply")
@@ -30,107 +30,107 @@ public class OrderReturnApplyEntity implements Serializable {
 	 */
 	private Long orderId;
 	/**
-	 * ?˻???Ʒid
+	 * 退货商品id
 	 */
 	private Long skuId;
 	/**
-	 * ???????
+	 * 订单编号
 	 */
 	private String orderSn;
 	/**
-	 * ????ʱ?
+	 * 申请时间
 	 */
 	private Date createTime;
 	/**
-	 * ??Ա?û???
+	 * 会员用户名
 	 */
 	private String memberUsername;
 	/**
-	 * ?˿??
+	 * 退款金额
 	 */
 	private BigDecimal returnAmount;
 	/**
-	 * ?˻???????
+	 * 退货人姓名
 	 */
 	private String returnName;
 	/**
-	 * ?˻??˵绰
+	 * 退货人电话
 	 */
 	private String returnPhone;
 	/**
-	 * ????״̬[0->?????�1->?˻??У?2->?????ɣ?3->?Ѿܾ?]
+	 * 申请状态[0->待处理；1->退货中；2->已完成；3->已拒绝]
 	 */
 	private Integer status;
 	/**
-	 * ????ʱ?
+	 * 处理时间
 	 */
 	private Date handleTime;
 	/**
-	 * ??ƷͼƬ
+	 * 商品图片
 	 */
 	private String skuImg;
 	/**
-	 * ??Ʒ???
+	 * 商品名称
 	 */
 	private String skuName;
 	/**
-	 * ??ƷƷ?
+	 * 商品品牌
 	 */
 	private String skuBrand;
 	/**
-	 * ??Ʒ????????(JSON)
+	 * 商品销售属性(JSON)
 	 */
 	private String skuAttrsVals;
 	/**
-	 * ?˻?????
+	 * 退货数量
 	 */
 	private Integer skuCount;
 	/**
-	 * ??Ʒ???
+	 * 商品单价
 	 */
 	private BigDecimal skuPrice;
 	/**
-	 * ??Ʒʵ??֧?????
+	 * 商品实际支付单价
 	 */
 	private BigDecimal skuRealPrice;
 	/**
-	 * ԭ?
+	 * 原因
 	 */
 	private String reason;
 	/**
-	 * ????
+	 * 描述
 	 */
 	private String description;
 	/**
-	 * ƾ֤ͼƬ???Զ??Ÿ
+	 * 凭证图片，以逗号隔开
 	 */
 	private String descPics;
 	/**
-	 * ???�ע
+	 * 处理备注
 	 */
 	private String handleNote;
 	/**
-	 * ??????Ա
+	 * 处理人员
 	 */
 	private String handleMan;
 	/**
-	 * ?ջ??
+	 * 收货人
 	 */
 	private String receiveMan;
 	/**
-	 * ?ջ?ʱ?
+	 * 收货时间
 	 */
 	private Date receiveTime;
 	/**
-	 * ?ջ???ע
+	 * 收货备注
 	 */
 	private String receiveNote;
 	/**
-	 * ?ջ??绰
+	 * 收货电话
 	 */
 	private String receivePhone;
 	/**
-	 * ??˾?ջ???ַ
+	 * 公司收货地址
 	 */
 	private String companyAddress;
 

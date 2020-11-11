@@ -9,11 +9,11 @@ import java.util.Date;
 import lombok.Data;
 
 /**
- * ????????Ϣ
+ * 订单项信息
  * 
  * @author ZH
  * @email 937747563@qq.com
- * @date 2020-10-24 21:56:00
+ * @date 2020-10-30 11:06:09
  */
 @Data
 @TableName("oms_order_item")
@@ -46,59 +46,59 @@ public class OrderItemEntity implements Serializable {
 	 */
 	private String spuPic;
 	/**
-	 * Ʒ?
+	 * 品牌
 	 */
 	private String spuBrand;
 	/**
-	 * ??Ʒ????id
+	 * 商品分类id
 	 */
 	private Long categoryId;
 	/**
-	 * ??Ʒsku???
+	 * 商品sku编号
 	 */
 	private Long skuId;
 	/**
-	 * ??Ʒsku???
+	 * 商品sku名字
 	 */
 	private String skuName;
 	/**
-	 * ??ƷskuͼƬ
+	 * 商品sku图片
 	 */
 	private String skuPic;
 	/**
-	 * ??Ʒsku?۸
+	 * 商品sku价格
 	 */
 	private BigDecimal skuPrice;
 	/**
-	 * ??Ʒ??????????
+	 * 商品购买的数量
 	 */
 	private Integer skuQuantity;
 	/**
-	 * ??Ʒ???????????ϣ?JSON??
+	 * 商品销售属性组合（JSON）
 	 */
 	private String skuAttrsVals;
 	/**
-	 * ??Ʒ?????ֽ??
+	 * 商品促销分解金额
 	 */
 	private BigDecimal promotionAmount;
 	/**
-	 * ?Ż?ȯ?Żݷֽ??
+	 * 优惠券优惠分解金额
 	 */
 	private BigDecimal couponAmount;
 	/**
-	 * ?????Żݷֽ??
+	 * 积分优惠分解金额
 	 */
 	private BigDecimal integrationAmount;
 	/**
-	 * ????Ʒ?????Żݺ??ķֽ??
+	 * 该商品经过优惠后的分解金额
 	 */
 	private BigDecimal realAmount;
 	/**
-	 * ???ͻ??
+	 * 赠送积分
 	 */
 	private Integer giftIntegration;
 	/**
-	 * ???ͳɳ?ֵ
+	 * 赠送成长值
 	 */
 	private Integer giftGrowth;
 

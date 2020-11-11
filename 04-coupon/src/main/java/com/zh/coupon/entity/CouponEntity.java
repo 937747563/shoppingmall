@@ -9,11 +9,11 @@ import java.util.Date;
 import lombok.Data;
 
 /**
- * ?Ż?ȯ??Ϣ
+ * 优惠券信息
  * 
  * @author ZH
  * @email 937747563@qq.com
- * @date 2020-10-24 18:12:29
+ * @date 2020-10-30 11:07:48
  */
 @Data
 @TableName("sms_coupon")
@@ -26,79 +26,79 @@ public class CouponEntity implements Serializable {
 	@TableId
 	private Long id;
 	/**
-	 * ?Żݾ?????[0->ȫ????ȯ??1->??Ա??ȯ??2->??????ȯ??3->ע????ȯ]
+	 * 优惠卷类型[0->全场赠券；1->会员赠券；2->购物赠券；3->注册赠券]
 	 */
 	private Integer couponType;
 	/**
-	 * ?Ż?ȯͼƬ
+	 * 优惠券图片
 	 */
 	private String couponImg;
 	/**
-	 * ?Żݾ????
+	 * 优惠卷名字
 	 */
 	private String couponName;
 	/**
-	 * ????
+	 * 数量
 	 */
 	private Integer num;
 	/**
-	 * ?
+	 * 金额
 	 */
 	private BigDecimal amount;
 	/**
-	 * ÿ??????????
+	 * 每人限领张数
 	 */
 	private Integer perLimit;
 	/**
-	 * ʹ???ż?
+	 * 使用门槛
 	 */
 	private BigDecimal minPoint;
 	/**
-	 * ??ʼʱ?
+	 * 开始时间
 	 */
 	private Date startTime;
 	/**
-	 * ????ʱ?
+	 * 结束时间
 	 */
 	private Date endTime;
 	/**
-	 * ʹ??????[0->ȫ??ͨ?ã?1->ָ?????ࣻ2->ָ????Ʒ]
+	 * 使用类型[0->全场通用；1->指定分类；2->指定商品]
 	 */
 	private Integer useType;
 	/**
-	 * ??ע
+	 * 备注
 	 */
 	private String note;
 	/**
-	 * ????????
+	 * 发行数量
 	 */
 	private Integer publishCount;
 	/**
-	 * ??ʹ??????
+	 * 已使用数量
 	 */
 	private Integer useCount;
 	/**
-	 * ??ȡ????
+	 * 领取数量
 	 */
 	private Integer receiveCount;
 	/**
-	 * ??????ȡ?Ŀ?ʼ???
+	 * 可以领取的开始日期
 	 */
 	private Date enableStartTime;
 	/**
-	 * ??????ȡ?Ľ??????
+	 * 可以领取的结束日期
 	 */
 	private Date enableEndTime;
 	/**
-	 * ?Ż??
+	 * 优惠码
 	 */
 	private String code;
 	/**
-	 * ??????ȡ?Ļ?Ա?ȼ?[0->???޵ȼ???????-??Ӧ?ȼ?]
+	 * 可以领取的会员等级[0->不限等级，其他-对应等级]
 	 */
 	private Integer memberLevel;
 	/**
-	 * ????״̬[0-δ??????1-?ѷ???]
+	 * 发布状态[0-未发布，1-已发布]
 	 */
 	private Integer publish;
 

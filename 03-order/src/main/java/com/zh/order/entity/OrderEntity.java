@@ -9,11 +9,11 @@ import java.util.Date;
 import lombok.Data;
 
 /**
- * ????
+ * 订单
  * 
  * @author ZH
  * @email 937747563@qq.com
- * @date 2020-10-24 21:56:00
+ * @date 2020-10-30 11:06:09
  */
 @Data
 @TableName("oms_order")
@@ -30,11 +30,11 @@ public class OrderEntity implements Serializable {
 	 */
 	private Long memberId;
 	/**
-	 * ?????
+	 * 订单号
 	 */
 	private String orderSn;
 	/**
-	 * ʹ?õ??Ż?ȯ
+	 * 使用的优惠券
 	 */
 	private Long couponId;
 	/**
@@ -42,151 +42,153 @@ public class OrderEntity implements Serializable {
 	 */
 	private Date createTime;
 	/**
-	 * ?û???
+	 * 用户名
 	 */
 	private String memberUsername;
 	/**
-	 * ?????ܶ
+	 * 订单总额
 	 */
 	private BigDecimal totalAmount;
 	/**
-	 * Ӧ???ܶ
+	 * 应付总额
 	 */
 	private BigDecimal payAmount;
 	/**
-	 * ?˷ѽ
+	 * 运费金额
 	 */
 	private BigDecimal freightAmount;
 	/**
-	 * ?????Ż?????????ۡ??????????ݼۣ?
+	 * 促销优化金额（促销价、满减、阶梯价）
 	 */
 	private BigDecimal promotionAmount;
 	/**
-	 * ???ֵֿ۽
+	 * 积分抵扣金额
 	 */
 	private BigDecimal integrationAmount;
 	/**
-	 * ?Ż?ȯ?ֿ۽
+	 * 优惠券抵扣金额
 	 */
 	private BigDecimal couponAmount;
 	/**
-	 * ??̨????????ʹ?õ??ۿ۽
+	 * 后台调整订单使用的折扣金额
 	 */
 	private BigDecimal discountAmount;
 	/**
-	 * ֧????ʽ??1->֧??????2->΢?ţ?3->?????? 4->?????????
+	 * 支付方式【1->支付宝；2->微信；3->银联； 4->货到付款；】
 	 */
 	private Integer payType;
 	/**
-	 * ??????Դ[0->PC??????1->app????]
+	 * 订单来源[0->PC订单；1->app订单]
 	 */
 	private Integer sourceType;
 	/**
-	 * ????״̬??0->?????1->????????2->?ѷ?????3->?????ɣ?4->?ѹرգ?5->??Ч??????
+	 * 订单状态【0->待付款；1->待发货；2->已发货；3->已完成；4->已关闭；5->无效订单】
+
+
 	 */
 	private Integer status;
 	/**
-	 * ??????˾(???ͷ?ʽ)
+	 * 物流公司(配送方式)
 	 */
 	private String deliveryCompany;
 	/**
-	 * ???????
+	 * 物流单号
 	 */
 	private String deliverySn;
 	/**
-	 * ?Զ?ȷ??ʱ?䣨?죩
+	 * 自动确认时间（天）
 	 */
 	private Integer autoConfirmDay;
 	/**
-	 * ???Ի??õĻ??
+	 * 可以获得的积分
 	 */
 	private Integer integration;
 	/**
-	 * ???Ի??õĳɳ?ֵ
+	 * 可以获得的成长值
 	 */
 	private Integer growth;
 	/**
-	 * ??Ʊ????[0->??????Ʊ??1->???ӷ?Ʊ??2->ֽ?ʷ?Ʊ]
+	 * 发票类型[0->不开发票；1->电子发票；2->纸质发票]
 	 */
 	private Integer billType;
 	/**
-	 * ??Ʊ̧ͷ
+	 * 发票抬头
 	 */
 	private String billHeader;
 	/**
-	 * ??Ʊ???
+	 * 发票内容
 	 */
 	private String billContent;
 	/**
-	 * ??Ʊ?˵绰
+	 * 收票人电话
 	 */
 	private String billReceiverPhone;
 	/**
-	 * ??Ʊ?????
+	 * 收票人邮箱
 	 */
 	private String billReceiverEmail;
 	/**
-	 * ?ջ???????
+	 * 收货人姓名
 	 */
 	private String receiverName;
 	/**
-	 * ?ջ??˵绰
+	 * 收货人电话
 	 */
 	private String receiverPhone;
 	/**
-	 * ?ջ????ʱ
+	 * 收货人邮编
 	 */
 	private String receiverPostCode;
 	/**
-	 * ʡ??/ֱϽ?
+	 * 省份/直辖市
 	 */
 	private String receiverProvince;
 	/**
-	 * ???
+	 * 城市
 	 */
 	private String receiverCity;
 	/**
-	 * ??
+	 * 区
 	 */
 	private String receiverRegion;
 	/**
-	 * ??ϸ??ַ
+	 * 详细地址
 	 */
 	private String receiverDetailAddress;
 	/**
-	 * ??????ע
+	 * 订单备注
 	 */
 	private String note;
 	/**
-	 * ȷ???ջ?״̬[0->δȷ?ϣ?1->??ȷ??]
+	 * 确认收货状态[0->未确认；1->已确认]
 	 */
 	private Integer confirmStatus;
 	/**
-	 * ɾ??״̬??0->δɾ????1->??ɾ????
+	 * 删除状态【0->未删除；1->已删除】
 	 */
 	private Integer deleteStatus;
 	/**
-	 * ?µ?ʱʹ?õĻ??
+	 * 下单时使用的积分
 	 */
 	private Integer useIntegration;
 	/**
-	 * ֧??ʱ?
+	 * 支付时间
 	 */
 	private Date paymentTime;
 	/**
-	 * ????ʱ?
+	 * 发货时间
 	 */
 	private Date deliveryTime;
 	/**
-	 * ȷ???ջ?ʱ?
+	 * 确认收货时间
 	 */
 	private Date receiveTime;
 	/**
-	 * ????ʱ?
+	 * 评价时间
 	 */
 	private Date commentTime;
 	/**
-	 * ?޸?ʱ?
+	 * 修改时间
 	 */
 	private Date modifyTime;
 

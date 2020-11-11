@@ -18,11 +18,11 @@ import com.zh.common.utils.R;
 
 
 /**
- * sku??Ϣ
+ * sku信息
  *
  * @author ZH
  * @email 937747563@qq.com
- * @date 2020-10-23 17:57:20
+ * @date 2020-10-30 10:07:05
  */
 @RestController
 @RequestMapping("commodity/skuinfo")
@@ -34,6 +34,7 @@ public class SkuInfoController {
      * 列表
      */
     @RequestMapping("/list")
+    //@RequiresPermissions("commodity:skuinfo:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = skuInfoService.queryPage(params);
 
@@ -45,6 +46,7 @@ public class SkuInfoController {
      * 信息
      */
     @RequestMapping("/info/{skuId}")
+    //@RequiresPermissions("commodity:skuinfo:info")
     public R info(@PathVariable("skuId") Long skuId){
 		SkuInfoEntity skuInfo = skuInfoService.getById(skuId);
 
@@ -55,6 +57,7 @@ public class SkuInfoController {
      * 保存
      */
     @RequestMapping("/save")
+    //@RequiresPermissions("commodity:skuinfo:save")
     public R save(@RequestBody SkuInfoEntity skuInfo){
 		skuInfoService.save(skuInfo);
 
@@ -65,6 +68,7 @@ public class SkuInfoController {
      * 修改
      */
     @RequestMapping("/update")
+    //@RequiresPermissions("commodity:skuinfo:update")
     public R update(@RequestBody SkuInfoEntity skuInfo){
 		skuInfoService.updateById(skuInfo);
 
@@ -75,6 +79,7 @@ public class SkuInfoController {
      * 删除
      */
     @RequestMapping("/delete")
+    //@RequiresPermissions("commodity:skuinfo:delete")
     public R delete(@RequestBody Long[] skuIds){
 		skuInfoService.removeByIds(Arrays.asList(skuIds));
 

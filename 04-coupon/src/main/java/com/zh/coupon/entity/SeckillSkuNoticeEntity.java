@@ -8,11 +8,11 @@ import java.util.Date;
 import lombok.Data;
 
 /**
- * ??ɱ??Ʒ֪ͨ???
+ * 秒杀商品通知订阅
  * 
  * @author ZH
  * @email 937747563@qq.com
- * @date 2020-10-24 18:12:29
+ * @date 2020-10-30 11:07:48
  */
 @Data
 @TableName("sms_seckill_sku_notice")
@@ -33,19 +33,19 @@ public class SeckillSkuNoticeEntity implements Serializable {
 	 */
 	private Long skuId;
 	/**
-	 * ?????id
+	 * 活动场次id
 	 */
 	private Long sessionId;
 	/**
-	 * ????ʱ?
+	 * 订阅时间
 	 */
 	private Date subcribeTime;
 	/**
-	 * ????ʱ?
+	 * 发送时间
 	 */
 	private Date sendTime;
 	/**
-	 * ֪ͨ??ʽ[0-???ţ?1-?ʼ?]
+	 * 通知方式[0-短信，1-邮件]
 	 */
 	private Integer noticeType;
 

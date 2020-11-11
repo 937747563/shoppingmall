@@ -11,6 +11,12 @@ spring:
     nacos:
       discovery:
         server-addr: 172.16.23.150:8848
+    alicloud:
+      access-key: LTAI4GKtiyhHHZN2RY4ubcoQ
+      secret-key: OnWSymiVkQbU0GwiYB7TgnoTlz8pE7
+      oss:
+        endpoint: oss-cn-beijing.aliyuncs.com
+
   application:
     name: 01-commodity
 
@@ -19,3 +25,9 @@ mybatis-plus:
   global-config:
     db-config:
       id-type: auto
+      logic-delete-value: 0
+      logic-not-delete-value: 1
+logging:
+  level:
+    com.zh.commodity: debug
+

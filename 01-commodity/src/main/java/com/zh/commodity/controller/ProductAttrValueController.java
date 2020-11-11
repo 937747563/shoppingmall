@@ -18,11 +18,11 @@ import com.zh.common.utils.R;
 
 
 /**
- * spu????ֵ
+ * spu属性值
  *
  * @author ZH
  * @email 937747563@qq.com
- * @date 2020-10-23 17:57:20
+ * @date 2020-10-30 10:07:05
  */
 @RestController
 @RequestMapping("commodity/productattrvalue")
@@ -34,6 +34,7 @@ public class ProductAttrValueController {
      * 列表
      */
     @RequestMapping("/list")
+    //@RequiresPermissions("commodity:productattrvalue:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = productAttrValueService.queryPage(params);
 
@@ -45,6 +46,7 @@ public class ProductAttrValueController {
      * 信息
      */
     @RequestMapping("/info/{id}")
+    //@RequiresPermissions("commodity:productattrvalue:info")
     public R info(@PathVariable("id") Long id){
 		ProductAttrValueEntity productAttrValue = productAttrValueService.getById(id);
 
@@ -55,6 +57,7 @@ public class ProductAttrValueController {
      * 保存
      */
     @RequestMapping("/save")
+    //@RequiresPermissions("commodity:productattrvalue:save")
     public R save(@RequestBody ProductAttrValueEntity productAttrValue){
 		productAttrValueService.save(productAttrValue);
 
@@ -65,6 +68,7 @@ public class ProductAttrValueController {
      * 修改
      */
     @RequestMapping("/update")
+    //@RequiresPermissions("commodity:productattrvalue:update")
     public R update(@RequestBody ProductAttrValueEntity productAttrValue){
 		productAttrValueService.updateById(productAttrValue);
 
@@ -75,6 +79,7 @@ public class ProductAttrValueController {
      * 删除
      */
     @RequestMapping("/delete")
+    //@RequiresPermissions("commodity:productattrvalue:delete")
     public R delete(@RequestBody Long[] ids){
 		productAttrValueService.removeByIds(Arrays.asList(ids));
 

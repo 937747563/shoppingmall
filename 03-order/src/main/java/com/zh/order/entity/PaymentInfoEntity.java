@@ -9,11 +9,11 @@ import java.util.Date;
 import lombok.Data;
 
 /**
- * ֧????Ϣ?
+ * 支付信息表
  * 
  * @author ZH
  * @email 937747563@qq.com
- * @date 2020-10-24 21:56:00
+ * @date 2020-10-30 11:06:08
  */
 @Data
 @TableName("oms_payment_info")
@@ -26,43 +26,43 @@ public class PaymentInfoEntity implements Serializable {
 	@TableId
 	private Long id;
 	/**
-	 * ?????ţ?????ҵ???ţ?
+	 * 订单号（对外业务号）
 	 */
 	private String orderSn;
 	/**
-	 * ????id
+	 * 订单id
 	 */
 	private Long orderId;
 	/**
-	 * ֧??????????ˮ?
+	 * 支付宝交易流水号
 	 */
 	private String alipayTradeNo;
 	/**
-	 * ֧???ܽ
+	 * 支付总金额
 	 */
 	private BigDecimal totalAmount;
 	/**
-	 * ???????
+	 * 交易内容
 	 */
 	private String subject;
 	/**
-	 * ֧??״̬
+	 * 支付状态
 	 */
 	private String paymentStatus;
 	/**
-	 * ????ʱ?
+	 * 创建时间
 	 */
 	private Date createTime;
 	/**
-	 * ȷ??ʱ?
+	 * 确认时间
 	 */
 	private Date confirmTime;
 	/**
-	 * ?ص????
+	 * 回调内容
 	 */
 	private String callbackContent;
 	/**
-	 * ?ص?ʱ?
+	 * 回调时间
 	 */
 	private Date callbackTime;
 

@@ -18,11 +18,11 @@ import com.zh.common.utils.R;
 
 
 /**
- * Ʒ?
+ * 品牌
  *
  * @author ZH
  * @email 937747563@qq.com
- * @date 2020-10-23 17:57:20
+ * @date 2020-10-30 10:07:05
  */
 @RestController
 @RequestMapping("commodity/brand")
@@ -34,6 +34,7 @@ public class BrandController {
      * 列表
      */
     @RequestMapping("/list")
+    //@RequiresPermissions("commodity:brand:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = brandService.queryPage(params);
 
@@ -45,6 +46,7 @@ public class BrandController {
      * 信息
      */
     @RequestMapping("/info/{brandId}")
+    //@RequiresPermissions("commodity:brand:info")
     public R info(@PathVariable("brandId") Long brandId){
 		BrandEntity brand = brandService.getById(brandId);
 
@@ -55,6 +57,7 @@ public class BrandController {
      * 保存
      */
     @RequestMapping("/save")
+    //@RequiresPermissions("commodity:brand:save")
     public R save(@RequestBody BrandEntity brand){
 		brandService.save(brand);
 
@@ -65,6 +68,7 @@ public class BrandController {
      * 修改
      */
     @RequestMapping("/update")
+    //@RequiresPermissions("commodity:brand:update")
     public R update(@RequestBody BrandEntity brand){
 		brandService.updateById(brand);
 
@@ -75,6 +79,7 @@ public class BrandController {
      * 删除
      */
     @RequestMapping("/delete")
+    //@RequiresPermissions("commodity:brand:delete")
     public R delete(@RequestBody Long[] brandIds){
 		brandService.removeByIds(Arrays.asList(brandIds));
 

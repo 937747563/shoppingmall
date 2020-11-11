@@ -18,11 +18,11 @@ import com.zh.common.utils.R;
 
 
 /**
- * skuͼƬ
+ * sku图片
  *
  * @author ZH
  * @email 937747563@qq.com
- * @date 2020-10-23 17:57:20
+ * @date 2020-10-30 10:07:05
  */
 @RestController
 @RequestMapping("commodity/skuimages")
@@ -34,6 +34,7 @@ public class SkuImagesController {
      * 列表
      */
     @RequestMapping("/list")
+    //@RequiresPermissions("commodity:skuimages:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = skuImagesService.queryPage(params);
 
@@ -45,6 +46,7 @@ public class SkuImagesController {
      * 信息
      */
     @RequestMapping("/info/{id}")
+    //@RequiresPermissions("commodity:skuimages:info")
     public R info(@PathVariable("id") Long id){
 		SkuImagesEntity skuImages = skuImagesService.getById(id);
 
@@ -55,6 +57,7 @@ public class SkuImagesController {
      * 保存
      */
     @RequestMapping("/save")
+    //@RequiresPermissions("commodity:skuimages:save")
     public R save(@RequestBody SkuImagesEntity skuImages){
 		skuImagesService.save(skuImages);
 
@@ -65,6 +68,7 @@ public class SkuImagesController {
      * 修改
      */
     @RequestMapping("/update")
+    //@RequiresPermissions("commodity:skuimages:update")
     public R update(@RequestBody SkuImagesEntity skuImages){
 		skuImagesService.updateById(skuImages);
 
@@ -75,6 +79,7 @@ public class SkuImagesController {
      * 删除
      */
     @RequestMapping("/delete")
+    //@RequiresPermissions("commodity:skuimages:delete")
     public R delete(@RequestBody Long[] ids){
 		skuImagesService.removeByIds(Arrays.asList(ids));
 

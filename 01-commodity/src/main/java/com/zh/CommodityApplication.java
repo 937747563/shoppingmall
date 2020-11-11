@@ -7,8 +7,8 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
- *  商品模块
- *      配置mybatis配置文件
+ * 商品模块
+ * 配置mybatis配置文件
  */
 
 
@@ -18,8 +18,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @SpringBootApplication
 public class CommodityApplication {
 
-        
-    public static void main(String[] args) {
+public static void main(String[] args) {
 
         SpringApplication.run(CommodityApplication.class, args);
     }

@@ -8,11 +8,11 @@ import java.util.Date;
 import lombok.Data;
 
 /**
- * ??Ա
+ * 会员
  * 
  * @author ZH
  * @email 937747563@qq.com
- * @date 2020-10-24 19:49:38
+ * @date 2020-10-30 12:55:10
  */
 @Data
 @TableName("ums_member")
@@ -25,71 +25,71 @@ public class MemberEntity implements Serializable {
 	@TableId
 	private Long id;
 	/**
-	 * ??Ա?ȼ?id
+	 * 会员等级id
 	 */
 	private Long levelId;
 	/**
-	 * ?û???
+	 * 用户名
 	 */
 	private String username;
 	/**
-	 * ???
+	 * 密码
 	 */
 	private String password;
 	/**
-	 * ?ǳ
+	 * 昵称
 	 */
 	private String nickname;
 	/**
-	 * ?ֻ????
+	 * 手机号码
 	 */
 	private String mobile;
 	/**
-	 * ???
+	 * 邮箱
 	 */
 	private String email;
 	/**
-	 * ͷ?
+	 * 头像
 	 */
 	private String header;
 	/**
-	 * ?Ա
+	 * 性别
 	 */
 	private Integer gender;
 	/**
-	 * ???
+	 * 生日
 	 */
 	private Date birth;
 	/**
-	 * ???ڳ??
+	 * 所在城市
 	 */
 	private String city;
 	/**
-	 * ְҵ
+	 * 职业
 	 */
 	private String job;
 	/**
-	 * ????ǩ??
+	 * 个性签名
 	 */
 	private String sign;
 	/**
-	 * ?û???Դ
+	 * 用户来源
 	 */
 	private Integer sourceType;
 	/**
-	 * ???
+	 * 积分
 	 */
 	private Integer integration;
 	/**
-	 * ?ɳ?ֵ
+	 * 成长值
 	 */
 	private Integer growth;
 	/**
-	 * ????״̬
+	 * 启用状态
 	 */
 	private Integer status;
 	/**
-	 * ע??ʱ?
+	 * 注册时间
 	 */
 	private Date createTime;
 

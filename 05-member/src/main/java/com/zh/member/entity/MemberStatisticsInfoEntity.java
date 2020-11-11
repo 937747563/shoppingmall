@@ -9,11 +9,11 @@ import java.util.Date;
 import lombok.Data;
 
 /**
- * ??Աͳ????Ϣ
+ * 会员统计信息
  * 
  * @author ZH
  * @email 937747563@qq.com
- * @date 2020-10-24 19:49:38
+ * @date 2020-10-30 12:55:10
  */
 @Data
 @TableName("ums_member_statistics_info")
@@ -26,59 +26,59 @@ public class MemberStatisticsInfoEntity implements Serializable {
 	@TableId
 	private Long id;
 	/**
-	 * ??Աid
+	 * 会员id
 	 */
 	private Long memberId;
 	/**
-	 * ?ۼ????ѽ
+	 * 累计消费金额
 	 */
 	private BigDecimal consumeAmount;
 	/**
-	 * ?ۼ??Żݽ
+	 * 累计优惠金额
 	 */
 	private BigDecimal couponAmount;
 	/**
-	 * ????????
+	 * 订单数量
 	 */
 	private Integer orderCount;
 	/**
-	 * ?Ż?ȯ????
+	 * 优惠券数量
 	 */
 	private Integer couponCount;
 	/**
-	 * ??????
+	 * 评价数
 	 */
 	private Integer commentCount;
 	/**
-	 * ?˻?????
+	 * 退货数量
 	 */
 	private Integer returnOrderCount;
 	/**
-	 * ??¼????
+	 * 登录次数
 	 */
 	private Integer loginCount;
 	/**
-	 * ??ע????
+	 * 关注数量
 	 */
 	private Integer attendCount;
 	/**
-	 * ??˿????
+	 * 粉丝数量
 	 */
 	private Integer fansCount;
 	/**
-	 * ?ղص???Ʒ????
+	 * 收藏的商品数量
 	 */
 	private Integer collectProductCount;
 	/**
-	 * ?ղص?ר???????
+	 * 收藏的专题活动数量
 	 */
 	private Integer collectSubjectCount;
 	/**
-	 * ?ղص?????????
+	 * 收藏的评论数量
 	 */
 	private Integer collectCommentCount;
 	/**
-	 * ??????????????
+	 * 邀请的朋友数量
 	 */
 	private Integer inviteFriendCount;
 

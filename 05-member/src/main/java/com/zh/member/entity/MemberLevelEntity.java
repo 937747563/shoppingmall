@@ -9,11 +9,11 @@ import java.util.Date;
 import lombok.Data;
 
 /**
- * ??Ա?ȼ?
+ * 会员等级
  * 
  * @author ZH
  * @email 937747563@qq.com
- * @date 2020-10-24 19:49:38
+ * @date 2020-10-30 12:55:10
  */
 @Data
 @TableName("ums_member_level")
@@ -26,39 +26,39 @@ public class MemberLevelEntity implements Serializable {
 	@TableId
 	private Long id;
 	/**
-	 * ?ȼ????
+	 * 等级名称
 	 */
 	private String name;
 	/**
-	 * ?ȼ???Ҫ?ĳɳ?ֵ
+	 * 等级需要的成长值
 	 */
 	private Integer growthPoint;
 	/**
-	 * ?Ƿ?ΪĬ?ϵȼ?[0->???ǣ?1->??]
+	 * 是否为默认等级[0->不是；1->是]
 	 */
 	private Integer defaultStatus;
 	/**
-	 * ???˷ѱ?׼
+	 * 免运费标准
 	 */
 	private BigDecimal freeFreightPoint;
 	/**
-	 * ÿ?????ۻ?ȡ?ĳɳ?ֵ
+	 * 每次评价获取的成长值
 	 */
 	private Integer commentGrowthPoint;
 	/**
-	 * ?Ƿ?????????Ȩ
+	 * 是否有免邮特权
 	 */
 	private Integer priviledgeFreeFreight;
 	/**
-	 * ?Ƿ??л?Ա?۸???Ȩ
+	 * 是否有会员价格特权
 	 */
 	private Integer priviledgeMemberPrice;
 	/**
-	 * ?Ƿ?????????Ȩ
+	 * 是否有生日特权
 	 */
 	private Integer priviledgeBirthday;
 	/**
-	 * ??ע
+	 * 备注
 	 */
 	private String note;
 

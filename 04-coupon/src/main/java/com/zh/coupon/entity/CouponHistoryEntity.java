@@ -8,11 +8,11 @@ import java.util.Date;
 import lombok.Data;
 
 /**
- * ?Ż?ȯ??ȡ??ʷ??¼
+ * 优惠券领取历史记录
  * 
  * @author ZH
  * @email 937747563@qq.com
- * @date 2020-10-24 18:12:29
+ * @date 2020-10-30 11:07:48
  */
 @Data
 @TableName("sms_coupon_history")
@@ -25,39 +25,39 @@ public class CouponHistoryEntity implements Serializable {
 	@TableId
 	private Long id;
 	/**
-	 * ?Ż?ȯid
+	 * 优惠券id
 	 */
 	private Long couponId;
 	/**
-	 * ??Աid
+	 * 会员id
 	 */
 	private Long memberId;
 	/**
-	 * ??Ա???
+	 * 会员名字
 	 */
 	private String memberNickName;
 	/**
-	 * ??ȡ??ʽ[0->??̨???ͣ?1->??????ȡ]
+	 * 获取方式[0->后台赠送；1->主动领取]
 	 */
 	private Integer getType;
 	/**
-	 * ????ʱ?
+	 * 创建时间
 	 */
 	private Date createTime;
 	/**
-	 * ʹ??״̬[0->δʹ?ã?1->??ʹ?ã?2->?ѹ???]
+	 * 使用状态[0->未使用；1->已使用；2->已过期]
 	 */
 	private Integer useType;
 	/**
-	 * ʹ??ʱ?
+	 * 使用时间
 	 */
 	private Date useTime;
 	/**
-	 * ????id
+	 * 订单id
 	 */
 	private Long orderId;
 	/**
-	 * ?????
+	 * 订单号
 	 */
 	private Long orderSn;
 

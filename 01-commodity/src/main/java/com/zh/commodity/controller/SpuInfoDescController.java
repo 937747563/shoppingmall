@@ -18,11 +18,11 @@ import com.zh.common.utils.R;
 
 
 /**
- * spu??Ϣ???
+ * spu信息介绍
  *
  * @author ZH
  * @email 937747563@qq.com
- * @date 2020-10-23 17:57:20
+ * @date 2020-10-30 10:07:05
  */
 @RestController
 @RequestMapping("commodity/spuinfodesc")
@@ -34,6 +34,7 @@ public class SpuInfoDescController {
      * 列表
      */
     @RequestMapping("/list")
+    //@RequiresPermissions("commodity:spuinfodesc:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = spuInfoDescService.queryPage(params);
 
@@ -45,6 +46,7 @@ public class SpuInfoDescController {
      * 信息
      */
     @RequestMapping("/info/{spuId}")
+    //@RequiresPermissions("commodity:spuinfodesc:info")
     public R info(@PathVariable("spuId") Long spuId){
 		SpuInfoDescEntity spuInfoDesc = spuInfoDescService.getById(spuId);
 
@@ -55,6 +57,7 @@ public class SpuInfoDescController {
      * 保存
      */
     @RequestMapping("/save")
+    //@RequiresPermissions("commodity:spuinfodesc:save")
     public R save(@RequestBody SpuInfoDescEntity spuInfoDesc){
 		spuInfoDescService.save(spuInfoDesc);
 
@@ -65,6 +68,7 @@ public class SpuInfoDescController {
      * 修改
      */
     @RequestMapping("/update")
+    //@RequiresPermissions("commodity:spuinfodesc:update")
     public R update(@RequestBody SpuInfoDescEntity spuInfoDesc){
 		spuInfoDescService.updateById(spuInfoDesc);
 
@@ -75,6 +79,7 @@ public class SpuInfoDescController {
      * 删除
      */
     @RequestMapping("/delete")
+    //@RequiresPermissions("commodity:spuinfodesc:delete")
     public R delete(@RequestBody Long[] spuIds){
 		spuInfoDescService.removeByIds(Arrays.asList(spuIds));
 

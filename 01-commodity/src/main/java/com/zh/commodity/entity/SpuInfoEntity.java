@@ -9,11 +9,11 @@ import java.util.Date;
 import lombok.Data;
 
 /**
- * spu??Ϣ
+ * spu信息
  * 
  * @author ZH
  * @email 937747563@qq.com
- * @date 2020-10-23 17:57:20
+ * @date 2020-10-30 10:07:05
  */
 @Data
 @TableName("pms_spu_info")
@@ -21,24 +21,24 @@ public class SpuInfoEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * ??Ʒid
+	 * 商品id
 	 */
 	@TableId
 	private Long id;
 	/**
-	 * ??Ʒ???
+	 * 商品名称
 	 */
 	private String spuName;
 	/**
-	 * ??Ʒ????
+	 * 商品描述
 	 */
 	private String spuDescription;
 	/**
-	 * ????????id
+	 * 所属分类id
 	 */
 	private Long catalogId;
 	/**
-	 * Ʒ??id
+	 * 品牌id
 	 */
 	private Long brandId;
 	/**
@@ -46,7 +46,7 @@ public class SpuInfoEntity implements Serializable {
 	 */
 	private BigDecimal weight;
 	/**
-	 * ?ϼ?״̬[0 - ?¼ܣ?1 - ?ϼ?]
+	 * 上架状态[0 - 下架，1 - 上架]
 	 */
 	private Integer publishStatus;
 	/**

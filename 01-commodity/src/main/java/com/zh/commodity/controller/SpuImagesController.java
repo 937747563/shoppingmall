@@ -18,11 +18,11 @@ import com.zh.common.utils.R;
 
 
 /**
- * spuͼƬ
+ * spu图片
  *
  * @author ZH
  * @email 937747563@qq.com
- * @date 2020-10-23 17:57:20
+ * @date 2020-10-30 10:07:05
  */
 @RestController
 @RequestMapping("commodity/spuimages")
@@ -34,6 +34,7 @@ public class SpuImagesController {
      * 列表
      */
     @RequestMapping("/list")
+    //@RequiresPermissions("commodity:spuimages:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = spuImagesService.queryPage(params);
 
@@ -45,6 +46,7 @@ public class SpuImagesController {
      * 信息
      */
     @RequestMapping("/info/{id}")
+    //@RequiresPermissions("commodity:spuimages:info")
     public R info(@PathVariable("id") Long id){
 		SpuImagesEntity spuImages = spuImagesService.getById(id);
 
@@ -55,6 +57,7 @@ public class SpuImagesController {
      * 保存
      */
     @RequestMapping("/save")
+    //@RequiresPermissions("commodity:spuimages:save")
     public R save(@RequestBody SpuImagesEntity spuImages){
 		spuImagesService.save(spuImages);
 
@@ -65,6 +68,7 @@ public class SpuImagesController {
      * 修改
      */
     @RequestMapping("/update")
+    //@RequiresPermissions("commodity:spuimages:update")
     public R update(@RequestBody SpuImagesEntity spuImages){
 		spuImagesService.updateById(spuImages);
 
@@ -75,6 +79,7 @@ public class SpuImagesController {
      * 删除
      */
     @RequestMapping("/delete")
+    //@RequiresPermissions("commodity:spuimages:delete")
     public R delete(@RequestBody Long[] ids){
 		spuImagesService.removeByIds(Arrays.asList(ids));
 

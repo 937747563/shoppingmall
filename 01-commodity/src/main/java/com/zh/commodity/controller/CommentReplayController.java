@@ -18,11 +18,11 @@ import com.zh.common.utils.R;
 
 
 /**
- * ??Ʒ???ۻظ???ϵ
+ * 商品评价回复关系
  *
  * @author ZH
  * @email 937747563@qq.com
- * @date 2020-10-23 17:57:20
+ * @date 2020-10-30 10:07:05
  */
 @RestController
 @RequestMapping("commodity/commentreplay")
@@ -34,6 +34,7 @@ public class CommentReplayController {
      * 列表
      */
     @RequestMapping("/list")
+    //@RequiresPermissions("commodity:commentreplay:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = commentReplayService.queryPage(params);
 
@@ -45,6 +46,7 @@ public class CommentReplayController {
      * 信息
      */
     @RequestMapping("/info/{id}")
+    //@RequiresPermissions("commodity:commentreplay:info")
     public R info(@PathVariable("id") Long id){
 		CommentReplayEntity commentReplay = commentReplayService.getById(id);
 
@@ -55,6 +57,7 @@ public class CommentReplayController {
      * 保存
      */
     @RequestMapping("/save")
+    //@RequiresPermissions("commodity:commentreplay:save")
     public R save(@RequestBody CommentReplayEntity commentReplay){
 		commentReplayService.save(commentReplay);
 
@@ -65,6 +68,7 @@ public class CommentReplayController {
      * 修改
      */
     @RequestMapping("/update")
+    //@RequiresPermissions("commodity:commentreplay:update")
     public R update(@RequestBody CommentReplayEntity commentReplay){
 		commentReplayService.updateById(commentReplay);
 
@@ -75,6 +79,7 @@ public class CommentReplayController {
      * 删除
      */
     @RequestMapping("/delete")
+    //@RequiresPermissions("commodity:commentreplay:delete")
     public R delete(@RequestBody Long[] ids){
 		commentReplayService.removeByIds(Arrays.asList(ids));
 

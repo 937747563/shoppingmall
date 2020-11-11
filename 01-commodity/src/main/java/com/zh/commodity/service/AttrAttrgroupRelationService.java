@@ -7,11 +7,11 @@ import com.zh.commodity.entity.AttrAttrgroupRelationEntity;
 import java.util.Map;
 
 /**
- * ????&???Է???????
+ * 属性&属性分组关联
  *
  * @author ZH
  * @email 937747563@qq.com
- * @date 2020-10-23 17:57:20
+ * @date 2020-10-30 10:07:05
  */
 public interface AttrAttrgroupRelationService extends IService<AttrAttrgroupRelationEntity> {
 

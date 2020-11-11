@@ -1,6 +1,7 @@
 package com.zh.commodity.controller;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -76,9 +77,21 @@ public class CategoryController {
      */
     @RequestMapping("/delete")
     public R delete(@RequestBody Long[] catIds){
-		categoryService.removeByIds(Arrays.asList(catIds));
+
+
+		categoryService.removeMenuByIds(Arrays.asList(catIds));
 
         return R.ok();
+    }
+
+    /**
+     * 查询所有分类，以父子形式显示
+     */
+    @RequestMapping("list/tree")
+    public R listTree(){
+        List<CategoryEntity> entities=categoryService.listWithTree();
+
+        return R.ok().put("data",entities);
     }
 
 }
