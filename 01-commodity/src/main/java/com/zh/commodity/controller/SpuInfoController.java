@@ -3,6 +3,7 @@ package com.zh.commodity.controller;
 import java.util.Arrays;
 import java.util.Map;
 
+import com.zh.commodity.vo.SpuSaveVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -31,12 +32,12 @@ public class SpuInfoController {
     private SpuInfoService spuInfoService;
 
     /**
-     * 列表
+     * 查询spu信息
      */
     @RequestMapping("/list")
     //@RequiresPermissions("commodity:spuinfo:list")
     public R list(@RequestParam Map<String, Object> params){
-        PageUtils page = spuInfoService.queryPage(params);
+        PageUtils page = spuInfoService.querByCondition(params);
 
         return R.ok().put("page", page);
     }
@@ -51,17 +52,6 @@ public class SpuInfoController {
 		SpuInfoEntity spuInfo = spuInfoService.getById(id);
 
         return R.ok().put("spuInfo", spuInfo);
-    }
-
-    /**
-     * 保存
-     */
-    @RequestMapping("/save")
-    //@RequiresPermissions("commodity:spuinfo:save")
-    public R save(@RequestBody SpuInfoEntity spuInfo){
-		spuInfoService.save(spuInfo);
-
-        return R.ok();
     }
 
     /**
@@ -85,5 +75,20 @@ public class SpuInfoController {
 
         return R.ok();
     }
+
+
+    /**
+     * 创建商品信息
+     */
+    @RequestMapping("/save")
+    //@RequiresPermissions("commodity:spuinfo:save")
+    public R save(@RequestBody SpuSaveVo spuSaveVo){
+        //spuInfoService.save(spuInfo);
+        spuInfoService.saveSpuInfo(spuSaveVo);
+
+        return R.ok();
+    }
+
+
 
 }

@@ -1,11 +1,13 @@
 package com.zh.commodity.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.zh.commodity.vo.AttrGroupRelationVo;
 import com.zh.commodity.vo.AttrRespVo;
 import com.zh.commodity.vo.AttrVo;
 import com.zh.common.utils.PageUtils;
 import com.zh.commodity.entity.AttrEntity;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -28,6 +30,12 @@ public interface AttrService extends IService<AttrEntity> {
     void updateAttr(AttrVo attrVo);
 
     PageUtils querySaleAttrPage(Map<String, Object> params, Long catelogId);
+
+    List<AttrEntity> getRelationAttr(Long attrGroupId);
+
+    void deleteRelation(AttrGroupRelationVo[] attrGroupRelationVo);
+
+    PageUtils getNoRelationAttr(Map<String, Object> params, Long attrGroupId);
 }
 
 
