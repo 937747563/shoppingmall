@@ -31,7 +31,7 @@ public class WareInfoController {
     private WareInfoService wareInfoService;
 
     /**
-     * 列表
+     * 仓库信息模糊查询（仓库维护）
      */
     @RequestMapping("/list")
     //@RequiresPermissions("stock:wareinfo:list")

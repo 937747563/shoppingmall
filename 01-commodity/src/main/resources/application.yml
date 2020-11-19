@@ -18,6 +18,8 @@ spring:
         endpoint: oss-cn-beijing.aliyuncs.com
   application:
     name: 01-commodity
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
 
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*.xml
@@ -29,4 +31,5 @@ mybatis-plus:
 logging:
   level:
     com.zh.commodity: debug
+
 
