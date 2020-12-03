@@ -1,0 +1,10 @@
+server:
+  port: 12000
+
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 172.16.23.150:8848
+  application:
+    name: 06-search

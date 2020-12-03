@@ -11,4 +11,5 @@ public class AttrVo extends AttrEntity {
      * 分组Id
      */
     private Long attrGroupId;
+
 }

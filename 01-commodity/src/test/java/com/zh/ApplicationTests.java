@@ -106,6 +106,15 @@ class ApplicationTests {
 
     }
 
+    @Test
+    public void test2(){
+
+        String a="0";
+
+        System.out.println(a.equals("0"));
+
+    }
+
 
 
 }

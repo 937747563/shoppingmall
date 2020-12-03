@@ -3,12 +3,9 @@ package com.zh.commodity.controller;
 import java.util.Arrays;
 import java.util.Map;
 
+import com.zh.commodity.service.SpuInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.zh.commodity.entity.SkuInfoEntity;
 import com.zh.commodity.service.SkuInfoService;
@@ -29,6 +26,8 @@ import com.zh.common.utils.R;
 public class SkuInfoController {
     @Autowired
     private SkuInfoService skuInfoService;
+
+
 
     /**
      * 查询sku（商品管理查询）
@@ -85,5 +84,8 @@ public class SkuInfoController {
 
         return R.ok();
     }
+
+
+
 
 }

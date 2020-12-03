@@ -27,20 +27,9 @@ import com.zh.common.utils.R;
 @RestController
 @RequestMapping("stock/purchasedetail")
 public class PurchaseDetailController {
+
     @Autowired
     private PurchaseDetailService purchaseDetailService;
-
-    /**
-     * 列表
-     */
-    @RequestMapping("/list")
-    //@RequiresPermissions("stock:purchasedetail:list")
-    public R list(@RequestParam Map<String, Object> params){
-        PageUtils page = purchaseDetailService.queryPage(params);
-
-        return R.ok().put("page", page);
-    }
-
 
     /**
      * 信息
@@ -85,5 +74,30 @@ public class PurchaseDetailController {
 
         return R.ok();
     }
+
+    /**
+     * 采购需求查询
+     */
+    @RequestMapping("/list")
+    //@RequiresPermissions("stock:purchasedetail:list")
+    public R list(@RequestParam Map<String, Object> params){
+        PageUtils page = purchaseDetailService.queryPage(params);
+
+        return R.ok().put("page", page);
+    }
+
+    /**
+     * 完成采购单
+     */
+    @RequestMapping("/finish")
+    public R finish(@RequestBody Long[] purchaseId){
+
+        purchaseDetailService.finish(purchaseId);
+
+        return R.ok();
+    }
+
+
+
 
 }

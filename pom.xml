@@ -23,6 +23,7 @@
 
         <module>getway</module>
         <module>third-party</module>
+        <module>06-search</module>
     </modules>
 
 

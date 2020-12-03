@@ -306,5 +306,15 @@ public class AttrServiceImpl extends ServiceImpl<AttrDao, AttrEntity> implements
         return pageUtils;
     }
 
+    /**
+     * 过滤attrIds  查询需要检索的attrIds
+     */
+    @Override
+    public List<Long> selectSearchAttrs(List<Long> attrIds) {
+
+        return baseMapper.selectSearchAttrs(attrIds);
+
+    }
+
 
 }

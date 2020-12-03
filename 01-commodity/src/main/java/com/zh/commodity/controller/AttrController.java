@@ -1,8 +1,11 @@
 package com.zh.commodity.controller;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
+import com.zh.commodity.entity.ProductAttrValueEntity;
+import com.zh.commodity.service.ProductAttrValueService;
 import com.zh.commodity.vo.AttrRespVo;
 import com.zh.commodity.vo.AttrVo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,8 +33,12 @@ import javax.annotation.Resource;
 @RestController
 @RequestMapping("commodity/attr")
 public class AttrController {
+
     @Autowired
     private AttrService attrService;
+
+    @Autowired
+    private ProductAttrValueService productAttrValueService;
 
     /**
      * 列表
@@ -113,5 +120,31 @@ public class AttrController {
 
         return R.ok();
     }
+
+    /**
+     * spu管理——>规格维护（查询spu所包含的规格参数）
+     */
+    @RequestMapping("/base/listforspu/{spuId}")
+    public R baseAttrListForSpu(@PathVariable Long spuId){
+
+        //根据spuId查询其参数信息
+        List<ProductAttrValueEntity> productAttrValueEntityList=productAttrValueService.queryBySpuId(spuId);
+        return R.ok().put("data",productAttrValueEntityList);
+    }
+
+    //  /update/28
+    /**
+     * 规格维护修改spu参数信息
+     */
+    @RequestMapping("/update/{spuId}")
+    public R updateSpuAttr(@PathVariable("spuId") Long spuId,
+                           @RequestBody List<ProductAttrValueEntity> entityList){
+
+        //根据spuId 修改spu的Att
+        productAttrValueService.updateSpuAttrBySpuId(spuId,entityList);
+
+        return R.ok();
+    }
+
 
 }

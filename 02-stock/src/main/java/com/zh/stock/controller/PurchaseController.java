@@ -1,8 +1,10 @@
 package com.zh.stock.controller;
 
 import java.util.Arrays;
+import java.util.Date;
 import java.util.Map;
 
+import com.zh.stock.vo.MergeVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -27,6 +29,7 @@ import com.zh.common.utils.R;
 @RestController
 @RequestMapping("stock/purchase")
 public class PurchaseController {
+
     @Autowired
     private PurchaseService purchaseService;
 
@@ -65,6 +68,9 @@ public class PurchaseController {
     @RequestMapping("/save")
     //@RequiresPermissions("stock:purchase:save")
     public R save(@RequestBody PurchaseEntity purchase){
+
+        purchase.setCreateTime(new Date());
+        purchase.setUpdateTime(new Date());
 		purchaseService.save(purchase);
 
         return R.ok();
@@ -91,5 +97,30 @@ public class PurchaseController {
 
         return R.ok();
     }
+
+    /**
+     * 采购需求——>查询采购单（未完成）
+     */
+    @RequestMapping("/unreceive/list")
+    //@RequiresPermissions("stock:purchase:list")
+    public R unreceiveList(@RequestParam Map<String, Object> params){
+        PageUtils page = purchaseService.queryPageUnreceive(params);
+
+        return R.ok().put("page", page);
+    }
+
+
+    /**
+     *  合并采购单（把采购需求添加到采购单中）
+     */
+    @RequestMapping("/merge")
+    //@RequiresPermissions("stock:purchase:save")
+    public R saveMerge(@RequestBody MergeVo mergeVo){
+        purchaseService.savePurchaseMerge(mergeVo);
+
+        return R.ok();
+    }
+
+
 
 }
