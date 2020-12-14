@@ -9,11 +9,16 @@ import com.zh.commodity.service.BrandService;
 import com.zh.commodity.service.CategoryService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
+import org.redisson.api.RedissonClient;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
 
 import javax.annotation.Resource;
 import java.io.File;
 import java.util.Arrays;
+import java.util.UUID;
 
 @Slf4j
 @SpringBootTest
@@ -27,6 +32,12 @@ class ApplicationTests {
 
     @Resource
     CategoryService categoryService;
+
+    @Autowired
+    StringRedisTemplate stringRedisTemplate;
+
+    @Autowired
+    RedissonClient redissonClient;
 
 
     @Test
@@ -93,27 +104,35 @@ class ApplicationTests {
     public void testFindPath(){
         Long[] catelogPath = categoryService.findCatelogPath(225L);
         log.info("完整路径"+ Arrays.asList(catelogPath));
-
-
     }
 
+    /**
+     * 测试redis
+     */
     @Test
-    public void test1(){
+    public void redisTest(){
 
-        String a="0";
+        ValueOperations<String, String> ops = stringRedisTemplate.opsForValue();
 
-        System.out.println(a.equals("0"));
+        //保存数据
+        ops.set("hello","word"+ UUID.randomUUID().toString());
+
+        //查询数据
+        String hello = ops.get("hello");
+
+        System.out.println(hello);
 
     }
 
+    /**
+     * 测试redisson
+     */
     @Test
-    public void test2(){
+    public void redissonTest(){
 
-        String a="0";
-
-        System.out.println(a.equals("0"));
-
+        System.out.println(redissonClient);
     }
+
 
 
 

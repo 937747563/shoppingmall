@@ -1,6 +1,7 @@
 package com.zh.commodity.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.zh.commodity.vo.Catelog2Vo;
 import com.zh.common.utils.PageUtils;
 import com.zh.commodity.entity.CategoryEntity;
 
@@ -26,5 +27,12 @@ public interface CategoryService extends IService<CategoryEntity> {
      * 找到 catelogId 的完成路径
      */
     Long[] findCatelogPath(Long catelogId);
+
+    /**
+     * 前台：查找一级分类
+     */
+    List<CategoryEntity> getLevel1Categorys();
+
+    Map<String, List<Catelog2Vo>> getCatalogJson();
 }
 
